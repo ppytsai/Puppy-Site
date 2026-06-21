@@ -46,9 +46,9 @@ export default function Home() {
               curiosity, and care
             </h1>
             <div className="animate-fade-up delay-300">
-              <Link href="/photos" className="btn-primary">
+              <a href="https://www.instagram.com/ppytsai" target="_blank" rel="noopener noreferrer" className="btn-primary">
                 Photos
-              </Link>
+              </a>
             </div>
           </div>
 
