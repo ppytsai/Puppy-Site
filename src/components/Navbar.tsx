@@ -10,6 +10,13 @@ interface NavbarProps {
   inverted?: boolean; // light text on dark background
 }
 
+const navItems = [
+  { href: '/', label: 'Home', external: false },
+  { href: '/about', label: 'About', external: false },
+  { href: 'https://www.instagram.com/ppytsai', label: 'Photos', external: true },
+  { href: '/contact', label: 'Contact', external: false },
+];
+
 export default function Navbar({
   transparent = false,
   bgColor = 'var(--cream)',
@@ -37,16 +44,8 @@ export default function Navbar({
     ? 'rgba(255,255,255,0.1)'
     : 'rgba(13,13,13,0.08)';
 
-  const internalLinks = [
-    { href: '/', label: 'Home' },
-    { href: '/about', label: 'About' },
-    { href: '/contact', label: 'Contact' },
-  ];
-
-  const navLinkClass = (href: string) =>
+  const linkClass = (href: string) =>
     `nav-link${inverted ? ' nav-link-inverted' : ''}${pathname === href ? ' active' : ''}`;
-
-  const externalLinkClass = `nav-link${inverted ? ' nav-link-inverted' : ''}`;
 
   return (
     <header
@@ -85,23 +84,24 @@ export default function Navbar({
         </Link>
 
         <ul style={{ display: 'flex', gap: '2.5rem', listStyle: 'none', margin: 0, padding: 0 }} className="hidden-mobile">
-          {internalLinks.map((link) => (
-            <li key={link.href}>
-              <Link href={link.href} className={navLinkClass(link.href)}>
-                {link.label}
-              </Link>
+          {navItems.map((item) => (
+            <li key={item.label}>
+              {item.external ? (
+                <a
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`nav-link${inverted ? ' nav-link-inverted' : ''}`}
+                >
+                  {item.label}
+                </a>
+              ) : (
+                <Link href={item.href} className={linkClass(item.href)}>
+                  {item.label}
+                </Link>
+              )}
             </li>
           ))}
-          <li>
-            <a
-              href="https://www.instagram.com/ppytsai"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={externalLinkClass}
-            >
-              Photos
-            </a>
-          </li>
         </ul>
 
         <button
@@ -129,25 +129,26 @@ export default function Navbar({
       {menuOpen && (
         <div style={{ backgroundColor: bgColor, padding: '1.5rem 2rem 2rem', borderTop: `1px solid ${borderColor}` }}>
           <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-            {internalLinks.map((link) => (
-              <li key={link.href}>
-                <Link href={link.href} className={navLinkClass(link.href)} onClick={() => setMenuOpen(false)} style={{ fontSize: '1rem' }}>
-                  {link.label}
-                </Link>
+            {navItems.map((item) => (
+              <li key={item.label}>
+                {item.external ? (
+                  <a
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`nav-link${inverted ? ' nav-link-inverted' : ''}`}
+                    onClick={() => setMenuOpen(false)}
+                    style={{ fontSize: '1rem' }}
+                  >
+                    {item.label}
+                  </a>
+                ) : (
+                  <Link href={item.href} className={linkClass(item.href)} onClick={() => setMenuOpen(false)} style={{ fontSize: '1rem' }}>
+                    {item.label}
+                  </Link>
+                )}
               </li>
             ))}
-            <li>
-              <a
-                href="https://www.instagram.com/ppytsai"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={externalLinkClass}
-                onClick={() => setMenuOpen(false)}
-                style={{ fontSize: '1rem' }}
-              >
-                Photos
-              </a>
-            </li>
           </ul>
         </div>
       )}
