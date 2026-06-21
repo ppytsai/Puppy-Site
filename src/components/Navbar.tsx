@@ -37,15 +37,16 @@ export default function Navbar({
     ? 'rgba(255,255,255,0.1)'
     : 'rgba(13,13,13,0.08)';
 
-  const links = [
+  const internalLinks = [
     { href: '/', label: 'Home' },
     { href: '/about', label: 'About' },
-    { href: '/photos', label: 'Photos' },
     { href: '/contact', label: 'Contact' },
   ];
 
-  const linkClass = (href: string) =>
+  const navLinkClass = (href: string) =>
     `nav-link${inverted ? ' nav-link-inverted' : ''}${pathname === href ? ' active' : ''}`;
+
+  const externalLinkClass = `nav-link${inverted ? ' nav-link-inverted' : ''}`;
 
   return (
     <header
@@ -84,13 +85,23 @@ export default function Navbar({
         </Link>
 
         <ul style={{ display: 'flex', gap: '2.5rem', listStyle: 'none', margin: 0, padding: 0 }} className="hidden-mobile">
-          {links.map((link) => (
+          {internalLinks.map((link) => (
             <li key={link.href}>
-              <Link href={link.href} className={linkClass(link.href)}>
+              <Link href={link.href} className={navLinkClass(link.href)}>
                 {link.label}
               </Link>
             </li>
           ))}
+          <li>
+            <a
+              href="https://www.instagram.com/ppytsai"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={externalLinkClass}
+            >
+              Photos
+            </a>
+          </li>
         </ul>
 
         <button
@@ -118,13 +129,25 @@ export default function Navbar({
       {menuOpen && (
         <div style={{ backgroundColor: bgColor, padding: '1.5rem 2rem 2rem', borderTop: `1px solid ${borderColor}` }}>
           <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-            {links.map((link) => (
+            {internalLinks.map((link) => (
               <li key={link.href}>
-                <Link href={link.href} className={linkClass(link.href)} onClick={() => setMenuOpen(false)} style={{ fontSize: '1rem' }}>
+                <Link href={link.href} className={navLinkClass(link.href)} onClick={() => setMenuOpen(false)} style={{ fontSize: '1rem' }}>
                   {link.label}
                 </Link>
               </li>
             ))}
+            <li>
+              <a
+                href="https://www.instagram.com/ppytsai"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={externalLinkClass}
+                onClick={() => setMenuOpen(false)}
+                style={{ fontSize: '1rem' }}
+              >
+                Photos
+              </a>
+            </li>
           </ul>
         </div>
       )}

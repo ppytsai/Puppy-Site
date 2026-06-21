@@ -10,8 +10,7 @@
   --sage-border: #C0D4BB;
   --forest: #2A4A2A;
   --forest-deep: #1A3020;
-  --font-display: var(--font-display, 'Georgia', serif);
-  --font-body: var(--font-body, sans-serif);
+
 }
 
 * { box-sizing: border-box; }
