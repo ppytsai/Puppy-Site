@@ -1,36 +1,88 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Puppy Tsai Photography
 
-## Getting Started
+Personal photography portfolio built with Next.js, deployed on Vercel.
 
-First, run the development server:
+## Local development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deployment (GitHub + Vercel)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### First-time setup
 
-## Learn More
+1. **Create a GitHub repo** and push this folder:
+   ```bash
+   git init
+   git add .
+   git commit -m "Initial commit"
+   git remote add origin https://github.com/YOUR_USERNAME/puppy-tsai-photography.git
+   git push -u origin main
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+2. **Connect to Vercel**:
+   - Go to [vercel.com](https://vercel.com) → New Project
+   - Import your GitHub repo
+   - Framework: Next.js (auto-detected)
+   - Click Deploy
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. **Custom domain** (`puppytsai.com`):
+   - In Vercel → your project → Settings → Domains
+   - Add `puppytsai.com` and `www.puppytsai.com`
+   - Update your DNS records as instructed (point to Vercel's nameservers or add the CNAME/A records)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+After that, every `git push` to `main` auto-deploys.
 
-## Deploy on Vercel
+## Contact form setup
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The contact form uses [Formspree](https://formspree.io) (free tier: 50 submissions/month).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Go to [formspree.io](https://formspree.io) → create an account → New Form
+2. Copy your form endpoint (looks like `https://formspree.io/f/xyzabc`)
+3. Open `src/components/ContactForm.tsx` and replace `YOUR_FORM_ID`:
+   ```
+   const res = await fetch('https://formspree.io/f/YOUR_FORM_ID', ...
+   ```
+
+## Photos page (Instagram)
+
+The Photos page currently links out to Instagram. To embed a real feed:
+
+**Option A – Elfsight** (easiest, free tier available):
+1. Sign up at [elfsight.com](https://elfsight.com) → Instagram Feed widget
+2. Get your embed snippet and paste it into `src/app/photos/page.tsx` where the comment says "OPTIONAL"
+
+**Option B – SnapWidget** (free):
+1. Sign up at [snapwidget.com](https://snapwidget.com)
+2. Copy the `<iframe>` embed code into the photos page
+
+## Social links
+
+Update your Instagram/LinkedIn URLs in `src/components/Footer.tsx` if needed.
+
+## File structure
+
+```
+src/
+├── app/
+│   ├── layout.tsx       — root layout + metadata
+│   ├── globals.css      — global styles, CSS variables, fonts
+│   ├── page.tsx         — Home
+│   ├── about/page.tsx   — About + exhibitions
+│   ├── photos/page.tsx  — Photos (Instagram embed)
+│   └── contact/page.tsx — Contact form
+└── components/
+    ├── Navbar.tsx
+    ├── Footer.tsx
+    └── ContactForm.tsx
+
+public/
+└── images/
+    ├── hero.jpg      — homepage hero
+    ├── about.jpg     — about page portrait
+    └── contact.jpg   — contact page leaf photo
+```

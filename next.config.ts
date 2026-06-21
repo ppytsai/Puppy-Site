@@ -1,7 +1,15 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  images: {
+    // Allow images from Squarespace CDN in case any are still referenced
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.squarespace-cdn.com',
+      },
+    ],
+  },
 };
 
 export default nextConfig;

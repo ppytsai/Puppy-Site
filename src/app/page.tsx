@@ -1,65 +1,155 @@
-import Image from "next/image";
+import Image from 'next/image';
+import Link from 'next/link';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+    <>
+      <Navbar />
+
+      <main style={{ flex: 1, paddingTop: '64px' }}>
+        {/* Hero section */}
+        <section
+          style={{
+            backgroundColor: 'var(--yellow)',
+            display: 'grid',
+            gridTemplateColumns: '1fr 1fr',
+            minHeight: 'min(90vh, 700px)',
+          }}
+        >
+          {/* Left: text */}
+          <div
+            style={{
+              padding: 'clamp(3rem, 8vw, 6rem) clamp(2rem, 6vw, 5rem)',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center',
+              gap: '2.5rem',
+            }}
+          >
+            <h1
+              className="animate-fade-up delay-100"
+              style={{
+                fontFamily: 'var(--font-display)',
+                fontWeight: 500,
+                fontSize: 'clamp(2.2rem, 4.5vw, 3.6rem)',
+                lineHeight: 1.15,
+                color: 'var(--black)',
+                margin: 0,
+              }}
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+              Between light and life,
+              <br />
+              storytelling with purpose,
+              <br />
+              curiosity, and care
+            </h1>
+            <div className="animate-fade-up delay-300">
+              <Link href="/photos" className="btn-primary">
+                Photos
+              </Link>
+            </div>
+          </div>
+
+          {/* Right: photo */}
+          <div
+            className="animate-fade-in delay-200"
+            style={{
+              position: 'relative',
+              overflow: 'hidden',
+            }}
           >
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+              src="/images/hero.jpg"
+              alt="Photography by Puppy Tsai"
+              fill
+              style={{ objectFit: 'cover', objectPosition: 'center' }}
+              priority
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+          </div>
+        </section>
+
+        {/* About teaser */}
+        <section
+          style={{
+            backgroundColor: 'var(--cream)',
+            padding: 'clamp(5rem, 10vw, 8rem) 2rem',
+            textAlign: 'center',
+          }}
+        >
+          <p
+            className="animate-fade-up delay-100"
+            style={{
+              fontFamily: 'var(--font-display)',
+              fontWeight: 400,
+              fontSize: 'clamp(1.1rem, 2.5vw, 1.5rem)',
+              color: 'var(--black)',
+              marginBottom: '2.5rem',
+              letterSpacing: '0.01em',
+            }}
           >
-            Documentation
+            Get to know Puppy
+          </p>
+          <Link href="/about" className="btn-primary animate-fade-up delay-200">
+            About
+          </Link>
+        </section>
+
+        {/* Contact section */}
+        <section
+          style={{
+            backgroundColor: 'var(--cream)',
+            borderTop: '1px solid rgba(13,13,13,0.08)',
+            padding: 'clamp(4rem, 8vw, 6rem) 2rem',
+            textAlign: 'center',
+          }}
+        >
+          <p
+            className="animate-fade-up delay-100"
+            style={{
+              fontFamily: 'var(--font-display)',
+              fontWeight: 400,
+              fontSize: 'clamp(1.1rem, 2.5vw, 1.5rem)',
+              color: 'var(--black)',
+              marginBottom: '1.25rem',
+              letterSpacing: '0.01em',
+            }}
+          >
+            Contact Puppy
+          </p>
+          <a
+            href="mailto:puppytsai.com@gmail.com"
+            className="animate-fade-up delay-200"
+            style={{
+              fontFamily: 'var(--font-display)',
+              fontWeight: 500,
+              fontSize: 'clamp(1rem, 1.8vw, 1.3rem)',
+              color: 'var(--black)',
+              textDecoration: 'underline',
+              textUnderlineOffset: '4px',
+              textDecorationColor: 'rgba(13,13,13,0.3)',
+              display: 'inline-block',
+            }}
+          >
+            puppytsai.com@gmail.com
           </a>
-        </div>
+        </section>
       </main>
-    </div>
+
+      <Footer />
+
+      <style>{`
+        @media (max-width: 640px) {
+          section:first-of-type {
+            grid-template-columns: 1fr !important;
+          }
+          section:first-of-type > div:last-child {
+            height: 280px;
+            position: relative !important;
+          }
+        }
+      `}</style>
+    </>
   );
 }
