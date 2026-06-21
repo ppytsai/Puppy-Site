@@ -46,9 +46,9 @@ export default function Home() {
               curiosity, and care
             </h1>
             <div className="animate-fade-up delay-300">
-              <a href="https://www.instagram.com/ppytsai" target="_blank" rel="noopener noreferrer" className="btn-primary">
-                Photos
-              </a>
+              <Link href="/about" className="btn-primary">
+                About
+              </Link>
             </div>
           </div>
 
@@ -89,11 +89,11 @@ export default function Home() {
               letterSpacing: '0.01em',
             }}
           >
-            Get to know Puppy
+            See Puppy&apos;s photography
           </p>
-          <Link href="/about" className="btn-primary animate-fade-up delay-200">
-            About
-          </Link>
+          <a href="https://www.instagram.com/ppytsai" target="_blank" rel="noopener noreferrer" className="btn-primary animate-fade-up delay-200">
+            Photos
+          </a>
         </section>
 
         {/* Contact section */}
