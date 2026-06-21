@@ -3,13 +3,13 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
 const exhibitions = [
-  { year: '2026', title: 'Re:collection', venue: 'Float Magazine', link: 'https://floatmagazine.us' },
+  { year: '2026', title: 'Re:collection', venue: 'Float Magazine', link: 'https://www.floatmagazine.us/store/recollection-magazine' },
   { year: '2025', title: 'Photos Only Show', venue: 'Greenpoint Gallery', location: 'Brooklyn, NY' },
-  { year: '2025', title: 'Issue #132 Into the Night', venue: 'F-Stop Magazine', link: 'https://fstopmagazine.com' },
-  { year: '2025', title: 'Into the Light', venue: 'Copenhagen Photo Festival — The Royal Danish Theatre', location: 'Copenhagen, Denmark', link: 'https://copenhagenphoto.com' },
-  { year: '2025', title: 'Issue #131 Open Theme 2025', venue: 'F-Stop Magazine', link: 'https://fstopmagazine.com' },
-  { year: '2025', title: 'With Love, New York', venue: 'Visionary Projects', location: 'New York, NY', link: 'https://visionaryprojects.com' },
-  { year: '2025', title: 'Issue #130 Inhabit', venue: 'F-Stop Magazine', link: 'https://fstopmagazine.com' },
+  { year: '2025', title: 'Issue #132 Into the Night', venue: 'F-Stop Magazine', link: 'https://www.fstopmagazine.com/pastissues/132/groupexhibition.html#gallery-241' },
+  { year: '2025', title: 'Into the Light', venue: 'Copenhagen Photo Festival — The Royal Danish Theatre', location: 'Copenhagen, Denmark', link: 'https://www.instagram.com/p/DKgChwjMISh/?img_index=3&igsh=MTdzeDRibnJnZWJzag==' },
+  { year: '2025', title: 'Issue #131 Open Theme 2025', venue: 'F-Stop Magazine', link: 'https://www.fstopmagazine.com/pastissues/131/groupexhibition.html#gallery-220' },
+  { year: '2025', title: 'With Love, New York', venue: 'Visionary Projects', location: 'New York, NY', link: 'https://www.instagram.com/p/DHJvE8gPQ0x/?igsh=OGphemMwOWd1MzNt' },
+  { year: '2025', title: 'Issue #130 Inhabit', venue: 'F-Stop Magazine', link: 'https://www.fstopmagazine.com/pastissues/130/groupexhibition.html#gallery-202' },
 ];
 
 export default function About() {
