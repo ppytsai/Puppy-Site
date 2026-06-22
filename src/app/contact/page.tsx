@@ -63,10 +63,56 @@ export default function Contact() {
                 borderBottom: '1px solid rgba(245,208,0,0.35)',
                 paddingBottom: '2px',
                 display: 'inline-block',
+                marginBottom: '2rem',
               }}
             >
               puppytsai.com@gmail.com
             </a>
+            <div
+              className="animate-fade-up delay-400"
+              style={{
+                display: 'flex',
+                gap: '2rem',
+                flexWrap: 'wrap',
+              }}
+            >
+              <a
+                href="https://www.instagram.com/ppytsai"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="contact-social-link"
+                style={{
+                  fontFamily: 'var(--font-body)',
+                  fontWeight: 400,
+                  fontSize: '0.82rem',
+                  letterSpacing: '0.08em',
+                  textTransform: 'uppercase',
+                  color: 'rgba(234, 240, 232, 0.7)',
+                  textDecoration: 'none',
+                  transition: 'color 0.2s ease',
+                }}
+              >
+                Instagram
+              </a>
+              <a
+                href="https://www.linkedin.com/in/puppytsai"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="contact-social-link"
+                style={{
+                  fontFamily: 'var(--font-body)',
+                  fontWeight: 400,
+                  fontSize: '0.82rem',
+                  letterSpacing: '0.08em',
+                  textTransform: 'uppercase',
+                  color: 'rgba(234, 240, 232, 0.7)',
+                  textDecoration: 'none',
+                  transition: 'color 0.2s ease',
+                }}
+              >
+                LinkedIn
+              </a>
+            </div>
           </div>
 
           {/* Right: image */}
@@ -92,6 +138,9 @@ export default function Contact() {
       <Footer />
 
       <style>{`
+        .contact-social-link:hover {
+          color: var(--yellow) !important;
+        }
         @media (max-width: 768px) {
           .contact-grid {
             grid-template-columns: 1fr !important;
