@@ -91,7 +91,7 @@ export default function Home() {
           >
             See Puppy&apos;s photography
           </p>
-          <a href="https://www.instagram.com/ppytsai" target="_blank" rel="noopener noreferrer" className="btn-primary animate-fade-up delay-200">
+          <a href="https://photos.puppytsai.com" target="_blank" rel="noopener noreferrer" className="btn-primary animate-fade-up delay-200">
             Photos
           </a>
         </section>

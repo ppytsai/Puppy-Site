@@ -13,7 +13,7 @@ interface NavbarProps {
 const navItems = [
   { href: '/', label: 'Home', external: false },
   { href: '/about', label: 'About', external: false },
-  { href: 'https://www.instagram.com/ppytsai', label: 'Photos', external: true },
+  { href: 'https://photos.puppytsai.com', label: 'Photos', external: true },
   { href: '/contact', label: 'Contact', external: false },
 ];
 
