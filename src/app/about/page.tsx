@@ -43,7 +43,7 @@ export default function About() {
                 className="animate-fade-up delay-100"
                 style={{
                   fontFamily: 'var(--font-body)',
-                  fontWeight: 300,
+                  fontWeight: 400,
                   fontSize: 'clamp(0.95rem, 1.5vw, 1.1rem)',
                   lineHeight: 1.9,
                   color: 'var(--black)',
@@ -60,7 +60,7 @@ export default function About() {
                 className="animate-fade-up delay-200"
                 style={{
                   fontFamily: 'var(--font-body)',
-                  fontWeight: 300,
+                  fontWeight: 400,
                   fontSize: 'clamp(0.95rem, 1.5vw, 1.1rem)',
                   lineHeight: 1.9,
                   color: 'var(--black)',
@@ -131,19 +131,19 @@ export default function About() {
                   <span
                     style={{
                       fontFamily: 'var(--font-body)',
-                      fontWeight: 400,
+                      fontWeight: 600,
                       fontSize: '0.78rem',
                       letterSpacing: '0.1em',
-                      color: 'var(--gray)',
+                      color: 'var(--gray-dark)',
                     }}
                   >
                     {item.year}
                   </span>
                   <div>
-                    <span style={{ fontFamily: 'var(--font-body)', fontWeight: 400, fontSize: '0.95rem', color: 'var(--black)' }}>
+                    <span style={{ fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: '0.95rem', color: 'var(--black)' }}>
                       {item.title}
                     </span>
-                    <span style={{ fontFamily: 'var(--font-body)', fontWeight: 300, fontSize: '0.9rem', color: 'var(--gray)', marginLeft: '0.5rem' }}>
+                    <span style={{ fontFamily: 'var(--font-body)', fontWeight: 400, fontSize: '0.9rem', color: 'var(--gray-dark)', marginLeft: '0.5rem' }}>
                       — {item.venue}{item.location && `, ${item.location}`}
                     </span>
                     {item.link && (
