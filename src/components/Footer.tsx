@@ -34,7 +34,7 @@ export default function Footer() {
         <div style={{ display: 'flex', gap: '1.25rem', alignItems: 'center' }}>
           {/* Instagram */}
           <a
-            href="https://photos.puppytsai.com"
+            href="https://www.instagram.com/ppytsai"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram"
